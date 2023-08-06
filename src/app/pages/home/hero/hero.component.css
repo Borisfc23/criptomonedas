@@ -1,0 +1,13 @@
+.hero {
+  padding-block: 150px 140px;
+}
+.hero-content {
+  margin-block-end: 88px;
+}
+.hero-text {
+  font-size: var(--fs-5);
+  margin-block: 25px 40px;
+}
+.hero-banner {
+  margin-block-start: 5rem;
+}
