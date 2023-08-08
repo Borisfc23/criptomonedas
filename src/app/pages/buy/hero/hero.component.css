@@ -3,6 +3,10 @@
 }
 .hero-title span {
   color: var(--roman-silver);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1rem;
 }
 .hero-title span img {
   display: inline;
