@@ -14,17 +14,19 @@ export class NavbarComponent {
   navToggler() {
     const navbar = document.querySelector('[data-navbar]');
     const navToggler = document.querySelector('[data-nav-toggler]');
-    const navbarLinks = document.querySelectorAll('[data-nav-link]');
 
     navbar?.classList.toggle('active');
     navToggler?.classList.toggle('active');
     document.body?.classList.toggle('active');
-    navbarLinks.forEach((item) =>
-      item.addEventListener('click', () => {
-        navbar?.classList.remove('active');
-        navToggler?.classList.remove('active');
-      })
-    );
+  }
+  closeMenu() {
+    const navbarLinks = document.querySelectorAll('[data-nav-link]');
+    const navbar = document.querySelector('[data-navbar]');
+    const navToggler = document.querySelector('[data-nav-toggler]');
+
+    navbar?.classList.remove('active');
+    navToggler?.classList.remove('active');
+    document.body?.classList.remove('active');
   }
   scrollActive() {
     const header = document.querySelector('[data-header]');

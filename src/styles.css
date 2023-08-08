@@ -153,9 +153,9 @@ body {
   line-height: 1.4;
 }
 
-/* body.active {
+body.active {
   overflow: hidden;
-} */
+}
 
 /* PROPS SCROLLS */
 ::-webkit-scrollbar {
