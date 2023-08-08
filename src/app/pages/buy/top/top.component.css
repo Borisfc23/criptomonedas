@@ -7,7 +7,7 @@
 .top-tab .tab-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 90%;
+  width: 100%;
   margin-inline: auto;
   gap: 2.5rem;
 }
@@ -30,7 +30,6 @@
 }
 @media (min-width: 575px) {
   .top-tab .tab-content {
-    width: 100%;
     grid-template-columns: repeat(2, 1fr);
   }
   .top-tab .tab-content li {
