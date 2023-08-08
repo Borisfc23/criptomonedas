@@ -1,0 +1,19 @@
+<section class="section faq" aria-label="faq" data-section>
+    <div class="container">
+        <div class="title-wrapper">
+            <h2 class="h2 section-title">
+                FAQ
+            </h2>
+        </div>
+        <li *ngFor="let faq of faqs; let i = index" class="faq-content" (click)="viewContent(i)">
+            <div class="faq-title">
+                <h4>{{faq.title}}</h4>
+                <button class="arrow-view" [ngClass]="{ 'rotate': faq.active }"><ion-icon
+                        name="chevron-down-sharp"></ion-icon></button>
+            </div>
+            <div [ngClass]="{ 'active': faq.active }" class="faq-text">
+                <p>{{faq.desc}}</p>
+            </div>
+        </li>
+    </div>
+</section>

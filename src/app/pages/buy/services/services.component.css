@@ -1,0 +1,72 @@
+.services {
+  background-color: var(--eerie-black-1);
+  padding-block-end: 0;
+}
+.services-tab {
+  background-color: var(--eerie-black-2);
+  border: 1px solid var(--raisin-black);
+  border-radius: var(--radius-24);
+  padding: 20px;
+  box-shadow: var(--shadow-2);
+  margin-block-start: -160px;
+}
+.service-card:is(:hover, .active) {
+  background-color: var(--gunmetal_50);
+  box-shadow: var(--shadow-3);
+  cursor: pointer;
+}
+.services-tab .tab-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.service-card {
+  padding: 15px 10px;
+  border-radius: var(--radius-12);
+  transition: var(--transition-1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.card-svg svg {
+  width: 40px;
+}
+.card-title a {
+  font-size: var(--fs-7);
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  gap: 15px;
+  text-align: center;
+}
+.card-title a ion-icon {
+  font-size: var(--fs-4);
+  display: none;
+}
+@media (min-width: 575px) {
+  .card-title a {
+    font-size: var(--fs-5);
+  }
+  .service-card {
+    padding: 20px 15px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 992px) {
+  .card-title a {
+    font-size: var(--fs-3);
+    text-align: left;
+  }
+  .service-card {
+    padding: 40px 20px;
+    flex-direction: row;
+  }
+  .card-title a ion-icon {
+    display: block;
+  }
+  .card-svg svg {
+    width: 60px;
+  }
+}

@@ -1,0 +1,17 @@
+<section class="section top" aria-label="top cryptos" data-section>
+    <div class="container">
+        <div class="title-wrapper">
+            <h2 class="h2 section-title">
+                Top Cryptocurrency Conversions
+            </h2>
+        </div>
+        <div class="top-tab">
+            <div class="tab-content">
+                <li *ngFor="let crypto of topCurrency">
+                    <img [src]="crypto.img" alt="">
+                    <p>{{crypto.name}}</p>
+                </li>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,15 +1,16 @@
 <header class="header" data-header>
     <div class="container">
-        <a [routerLink]="['/']" class="logo">
+        <a [routerLink]="['/home']" class="logo">
             <img src="assets/images/logo256x256.png" alt="logo-bitpoint" style="height: 32px !important;">
         </a>
         <nav class="navbar" data-navbar>
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a [routerLink]="['/']" class="navbar-link" routerLinkActive="active" data-nav-link>Home</a>
+                    <a routerLink="/home" class="navbar-link" routerLinkActive="active" data-nav-link>Home</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="navbar-link" data-nav-link>Buy Crypto</a>
+                    <a routerLink="/buy" class="navbar-link" routerLinkActive="active" data-nav-link>Buy
+                        Crypto</a>
                 </li>
                 <li class="navbar-item">
                     <a href="#" class="navbar-link" data-nav-link>Markets</a>

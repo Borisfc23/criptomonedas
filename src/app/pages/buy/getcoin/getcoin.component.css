@@ -1,0 +1,38 @@
+.getcoin {
+  background-color: var(--eerie-black-2);
+}
+.content-get {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  /* gap: 100px; */
+  margin-inline: auto;
+  max-width: 1280px;
+}
+.title-wrapper button {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.figure-getcoin {
+  display: flex;
+  justify-content: flex-end;
+}
+.figure-getcoin img {
+  width: 240px;
+  height: 240px;
+}
+@media (max-width: 575px) {
+  .figure-getcoin {
+    order: 1;
+    justify-content: center;
+  }
+  .title-wrapper {
+    order: 2;
+  }
+  .content-get {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
