@@ -1,0 +1,106 @@
+.overview {
+  background-color: var(--eerie-black-2);
+}
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section-title h1 {
+  margin-right: 1rem;
+  width: max-content;
+}
+.section-info select {
+  background-color: transparent;
+  font-weight: var(--fw-500);
+  border: none;
+  color: var(--white);
+  padding-left: 8px;
+  margin-top: 10px;
+}
+.section-info select option {
+  background-color: var(--eerie-black-2);
+}
+.section-title p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-6);
+}
+.tab-content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+.market-tab {
+  margin-block-start: 25px;
+}
+.market-card {
+  padding: 20px;
+  border-radius: var(--radius-12);
+  transition: var(--transition-1);
+}
+.market-card span {
+  margin-block-end: 15px;
+  color: var(--white);
+  font-weight: var(--fw-700);
+}
+.content-coin {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.content-coin:not(:last-child) {
+  margin-block-end: 15px;
+}
+.content-coin img {
+  width: 24px;
+  height: 24px;
+}
+.content-coin .info-coin {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.content-coin .info-coin .name p {
+  color: var(--white);
+  font-weight: var(--fw-700);
+}
+.content-coin .info-coin .green {
+  color: var(--medium-sea-green);
+}
+.content-coin .info-coin .red {
+  color: var(--presian-red);
+}
+.market-card:is(:hover, :focus, .active) {
+  background-color: var(--gunmetal_50);
+  box-shadow: var(--shadow-3);
+}
+
+@media (min-width: 575px) {
+  .tab-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .content-coin .info-coin {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .content-coin {
+    column-gap: 12px;
+  }
+}
+@media (min-width: 992px) {
+  .tab-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .tab-content {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .content-coin .info-coin {
+    gap: 25px;
+  }
+}

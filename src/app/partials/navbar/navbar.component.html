@@ -15,7 +15,8 @@
                         Crypto</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="navbar-link" data-nav-link (click)="closeMenu()">Markets</a>
+                    <a [routerLink]="['/market']" class="navbar-link" routerLinkActive="active" data-nav-link
+                        (click)="closeMenu()">Markets</a>
                 </li>
                 <li class="navbar-item">
                     <a href="#" class="navbar-link" data-nav-link (click)="closeMenu()">Sell Crypto</a>
