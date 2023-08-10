@@ -9,25 +9,27 @@
             <ul class="tab-nav">
                 <li>
                     <div class="search-coin">
-                        <input type="text" placeholder="Search Coin Name">
+                        <input type="text" [(ngModel)]="filterInput" (ngModelChange)="filterSearch($event)"
+                            placeholder="Search Coin Name">
                         <ion-icon name="search">
                         </ion-icon>
                     </div>
                 </li>
                 <li>
-                    <button class="tab-btn active">View All</button>
+                    <button class="tab-btn active" (click)="filterAll()">View All</button>
                 </li>
                 <li>
-                    <button class="tab-btn  favorite"><ion-icon name="star"></ion-icon> Favorites</button>
+                    <button class="tab-btn  favorite" (click)="filterFav()"><ion-icon name="star"></ion-icon>
+                        Favorites</button>
                 </li>
                 <li>
-                    <button class="tab-btn ">Metaverse</button>
+                    <button class="tab-btn " (click)="filterMeta()">Metaverse</button>
                 </li>
                 <li>
-                    <button class="tab-btn ">Entertainment</button>
+                    <button class="tab-btn" (click)="filterEntertainment()">Entertainment</button>
                 </li>
                 <li>
-                    <button class="tab-btn ">Energy</button>
+                    <button class="tab-btn" (click)="filterEnergy()">Energy</button>
                 </li>
             </ul>
             <table class="market-table">
@@ -43,25 +45,27 @@
                     </tr>
                 </thead>
                 <tbody class="table-body">
-                    <tr class="table-row">
+                    <tr *ngFor="let crypto of cryptos " class="table-row">
                         <td class="table-data">
-                            <button class="add-to-fav " aria-label="Add to favourite" data-add-to-fav>
+                            <button class="add-to-fav " aria-label="Add to favourite" data-add-to-fav
+                                (click)="startChange($event)">
                                 <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
                                 <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
                             </button>
                         </td>
                         <td class="table-data">
                             <div class="wrapper">
-                                <img src="assets/images/coin-1.svg" width="20" height="20" alt="bitcoin">
+                                <img [src]="crypto.img" width="20" height="20" alt="bitcoin">
                                 <h3>
-                                    <a href="" class="coin-name">BTC <span class="span">Bitcoin</span></a>
+                                    <a href="" class="coin-name">{{crypto.slug}} <span
+                                            class="span">{{crypto.name}}</span></a>
                                 </h3>
                             </div>
                         </td>
-                        <td class="table-data last-price green">$56,623.54</td>
-                        <td class="table-data last-update green">+1.45%</td>
-                        <td class="table-data market-cap">$16.20B</td>
-                        <td class="table-data">$580.47B</td>
+                        <td class="table-data last-price" [ngClass]="crypto.green?'green':'red'">{{crypto.price}}</td>
+                        <td class="table-data last-update" [ngClass]="crypto.green?'green':'red'">{{crypto.day}}</td>
+                        <td class="table-data market-cap">{{crypto.volume}}</td>
+                        <td class="table-data">{{crypto.market}}</td>
                         <td class="table-data">
                             <div class="function-coins"> <img src="assets/images/detail.svg" alt="">
                                 <img src="assets/images/trade.svg" alt="">

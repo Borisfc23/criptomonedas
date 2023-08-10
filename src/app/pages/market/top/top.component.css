@@ -65,7 +65,9 @@
 .search-coin {
   position: relative;
 }
-
+.add-to-fav.active {
+  color: var(--maximum-yellow-red);
+}
 .search-coin input {
   padding-left: 35px;
   padding-block: 9px;
@@ -143,4 +145,7 @@
 }
 .green {
   color: var(--medium-sea-green);
+}
+.red {
+  color: red;
 }

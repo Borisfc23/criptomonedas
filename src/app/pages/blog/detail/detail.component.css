@@ -118,8 +118,19 @@
 .link-active {
   color: var(--blue-crayola);
 }
-.section-item-index .btn-item-icon .icon:is(.active) {
+.section-item-index .btn-item-icon .icon.active {
   border-color: var(--blue-crayola);
+}
+.post-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+.aside-content {
+  grid-row: 1/2;
+}
+.detail-content {
+  grid-row: 2/3;
 }
 @media (min-width: 992px) {
   .post-content {
@@ -129,6 +140,14 @@
   }
   .section-socials .social-list {
     gap: 20px;
+  }
+  .aside-content {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .detail-content {
+    grid-column: 1/2;
+    grid-row: 1/2;
   }
 }
 @media (min-width: 1200px) {

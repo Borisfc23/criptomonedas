@@ -31,16 +31,17 @@ export class DetailComponent {
   backBlog() {
     this.router.navigate(['/blog']);
   }
+  selectedElement: number | null = null;
+
   scrollToElement(element: any): void {
+    this.selectedElement = element;
     const titleElement = document.getElementById(
       'title' + (element + 1)
     ) as HTMLElement;
-    const offset = 70; // Ajusta este valor según tus necesidades
-
+    const offset = 70;
     const elementPosition =
       titleElement.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - offset;
-
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth',

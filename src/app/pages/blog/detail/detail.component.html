@@ -136,11 +136,12 @@
                         <div class="btn-item-line">
                             <div class="btn-item-tail"></div>
                             <div class="btn-item-icon">
-                                <div class="icon"></div>
+                                <div class="icon" [ngClass]="{'active': i === selectedElement}"></div>
                             </div>
                         </div>
                         <div class="btn-item-content">
-                            <a class="navigate-link" (click)="scrollToElement(i)">{{subtitle}}</a>
+                            <a class="navigate-link" (click)="scrollToElement(i)"
+                                [ngClass]="{'link-active': i === selectedElement}">{{subtitle}}</a>
                         </div>
                     </div>
                 </div>
