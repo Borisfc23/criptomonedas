@@ -1,0 +1,63 @@
+.hero-blog {
+  background-image: url("src/assets/images/blog-hero.png");
+  padding-block: 150px 140px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.animation-points {
+  background-image: url("src/assets/images/blog-hero-points.png"),
+    url("src/assets/images/blog-hero-points-2.png");
+  animation: sparkle 60s linear infinite;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+@keyframes sparkle {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: -500px -1000px, -400px -400px, 300px 300px;
+  }
+}
+.section {
+  padding-block: 110px 50px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.hero-content {
+  max-width: 480px;
+  width: 100%;
+}
+.hero-content .h1 {
+  margin-block-end: 25px;
+}
+.hero-content p {
+  font-size: var(--fs-5);
+  margin-bottom: 15px;
+}
+@media (min-width: 992px) {
+  .container {
+    justify-content: flex-end;
+  }
+  .hero-content {
+    max-width: 350px;
+  }
+  .section {
+    padding-block: 150px 140px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    justify-content: flex-end;
+  }
+  .hero-content {
+    max-width: 430px;
+  }
+}

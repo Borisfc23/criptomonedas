@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-  styleUrls: ['./buy.component.css']
+  styleUrls: ['./buy.component.css'],
 })
 export class BuyComponent {
-
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
 }

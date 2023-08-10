@@ -17,6 +17,16 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/market/market.module').then((m) => m.MarketModule),
   },
+  {
+    path: 'sell',
+    loadChildren: () =>
+      import('./pages/sell/sell.module').then((m) => m.SellModule),
+  },
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('./pages/blog/blog.module').then((m) => m.BlogModule),
+  },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

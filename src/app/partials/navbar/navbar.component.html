@@ -19,10 +19,12 @@
                         (click)="closeMenu()">Markets</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="navbar-link" data-nav-link (click)="closeMenu()">Sell Crypto</a>
+                    <a [routerLink]="['/sell']" class="navbar-link" routerLinkActive="active" data-nav-link
+                        (click)="closeMenu()">Sell Crypto</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="navbar-link" data-nav-link (click)="closeMenu()">Blog</a>
+                    <a [routerLink]="['/blog']" class="navbar-link" routerLinkActive="active" data-nav-link
+                        (click)="closeMenu()">Blog</a>
                 </li>
             </ul>
         </nav>
