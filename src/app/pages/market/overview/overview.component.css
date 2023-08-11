@@ -12,6 +12,7 @@
 }
 .section-info select {
   background-color: transparent;
+  outline: none;
   font-weight: var(--fw-500);
   border: none;
   color: var(--white);

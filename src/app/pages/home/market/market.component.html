@@ -7,22 +7,16 @@
         <div class="market-tab">
             <ul class="tab-nav">
                 <li>
-                    <button class="tab-btn active">View All</button>
+                    <button class="tab-btn active" (click)="filterAll()">View All</button>
                 </li>
                 <li>
-                    <button class="tab-btn ">Metaverse</button>
+                    <button class="tab-btn" (click)="filterMeta($event)">Metaverse</button>
                 </li>
                 <li>
-                    <button class="tab-btn ">Entertainment</button>
+                    <button class="tab-btn" (click)="filterEntertainment($event)">Entertainment</button>
                 </li>
                 <li>
-                    <button class="tab-btn ">Energy</button>
-                </li>
-                <li>
-                    <button class="tab-btn ">NFT</button>
-                </li>
-                <li>
-                    <button class="tab-btn ">Gaming</button>
+                    <button class="tab-btn" (click)="filterEnergy($event)">Energy</button>
                 </li>
             </ul>
             <table class="market-table">
@@ -39,82 +33,31 @@
                     </tr>
                 </thead>
                 <tbody class="table-body">
-                    <tr class="table-row">
+                    <tr *ngFor="let crypto of cryptos;let i=index" class="table-row">
                         <td class="table-data">
                             <button class="add-to-fav " aria-label="Add to favourite" data-add-to-fav
-                                (click)="startChange($event)">
+                                (click)="startChange($event,crypto)" [ngClass]="crypto.fav?'active':''">
                                 <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
                                 <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
                             </button>
                         </td>
-                        <th class="table-data rank" scope="row">1</th>
+                        <th class="table-data rank" scope="row">{{i+1}}</th>
                         <td class="table-data">
                             <div class="wrapper">
-                                <img src="assets/images/coin-1.svg" width="20" height="20" alt="bitcoin">
+                                <img [src]="crypto.img" width="20" height="20" alt="bitcoin">
                                 <h3>
-                                    <a href="" class="coin-name">Bitcoin <span class="span">BTC</span></a>
+                                    <a href="" class="coin-name">{{crypto.name}} <span
+                                            class="span">{{crypto.slug}}</span></a>
                                 </h3>
                             </div>
                         </td>
-                        <td class="table-data last-price">$56,623.54</td>
-                        <td class="table-data last-update green">+1.45%</td>
-                        <td class="table-data market-cap">$880,423,640,582</td>
-                        <td class="table-data">
-                            <img src="assets/images/chart-1.svg" alt="chart" width="100" height="40">
+                        <td class="table-data last-price">{{crypto.price}}</td>
+                        <td class="table-data last-update" [ngClass]="crypto.green?'green':'red'">{{crypto.day}}
                         </td>
+                        <td class="table-data market-cap">{{crypto.market}}</td>
                         <td class="table-data">
-                            <button class="btn btn-outline">Trade</button>
-                        </td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-data">
-                            <button class="add-to-fav" aria-label="Add to favourite" (click)="startChange($event)"
-                                data-add-to-fav>
-                                <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
-                                <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
-                            </button>
-                        </td>
-                        <th class="table-data rank" scope="row">2</th>
-                        <td class="table-data">
-                            <div class="wrapper">
-                                <img src="assets/images/coin-2.svg" width="20" height="20" alt="bitcoin">
-                                <h3>
-                                    <a href="" class="coin-name">Ethereum <span class="span">ETH</span></a>
-                                </h3>
-                            </div>
-                        </td>
-                        <td class="table-data last-price">$56,623.54</td>
-                        <td class="table-data last-update red">-5.45%</td>
-                        <td class="table-data market-cap">$880,423,640,582</td>
-                        <td class="table-data">
-                            <img src="assets/images/chart-2.svg" alt="chart" width="100" height="40">
-                        </td>
-                        <td class="table-data">
-                            <button class="btn btn-outline">Trade</button>
-                        </td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-data">
-                            <button class="add-to-fav" aria-label="Add to favourite" (click)="startChange($event)"
-                                data-add-to-fav>
-                                <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
-                                <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
-                            </button>
-                        </td>
-                        <th class="table-data rank" scope="row">2</th>
-                        <td class="table-data">
-                            <div class="wrapper">
-                                <img src="assets/images/coin-3.svg" width="20" height="20" alt="bitcoin">
-                                <h3>
-                                    <a href="" class="coin-name">Thereum <span class="span">ETH</span></a>
-                                </h3>
-                            </div>
-                        </td>
-                        <td class="table-data last-price">$56,623.54</td>
-                        <td class="table-data last-update red">-5.45%</td>
-                        <td class="table-data market-cap">$880,423,640,582</td>
-                        <td class="table-data">
-                            <img src="assets/images/chart-2.svg" alt="chart" width="100" height="40">
+                            <img [src]="crypto.green?'assets/images/chart-1.svg':'assets/images/chart-2.svg'"
+                                alt="chart" width="100" height="40">
                         </td>
                         <td class="table-data">
                             <button class="btn btn-outline">Trade</button>

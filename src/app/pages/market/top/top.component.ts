@@ -1,46 +1,54 @@
 import { Component } from '@angular/core';
-import { cryptos } from 'src/assets/json/json';
+import { Crypto } from 'src/app/models/Crypto';
+import { FiltersService } from 'src/app/services/filters.service';
 @Component({
   selector: 'app-top',
   templateUrl: './top.component.html',
   styleUrls: ['./top.component.css'],
 })
 export class TopComponent {
-  cryptos: any[] = cryptos;
+  cryptos: any[] = [];
   filterInput = '';
   tempArray: any[] = [];
-  constructor() {
+  constructor(private readonly service: FiltersService) {
     this.tempArray = [...this.cryptos];
   }
+  ngOnInit(): void {
+    this.filterAll();
+  }
   filterAll() {
-    this.cryptos = this.tempArray;
+    this.cryptos = this.service.filterAll();
   }
-  filterFav() {}
-  filterEnergy() {
-    this.cryptos = this.tempArray;
-    const crypsMeta = this.cryptos.filter(({ type }) => type === 'energy');
-    this.cryptos = crypsMeta;
+  filterFav(event: any) {
+    event.target.classList.add('active');
+    this.removeActive();
+    this.cryptos = this.service.filterFav();
   }
-  filterEntertainment() {
-    this.cryptos = this.tempArray;
-    const crypsMeta = this.cryptos.filter(
-      ({ type }) => type === 'entertainment'
-    );
-    this.cryptos = crypsMeta;
+  filterEnergy(event: any) {
+    event.target.classList.add('active');
+    this.removeActive();
+    this.cryptos = this.service.filterEnergy();
   }
-  filterMeta() {
-    this.cryptos = this.tempArray;
-    const crypsMeta = this.cryptos.filter(({ type }) => type === 'metaverse');
-    this.cryptos = crypsMeta;
+  filterEntertainment(event: any) {
+    event.target.classList.add('active');
+    this.removeActive();
+    this.cryptos = this.service.filterEntertainment();
+  }
+  filterMeta(event: any) {
+    event.target.classList.add('active');
+    this.removeActive();
+    this.cryptos = this.service.filterMeta();
   }
   filterSearch(event: any) {
-    this.cryptos = this.tempArray;
-    const crypsSearch = this.cryptos.filter(({ name }) =>
-      name.toLowerCase().includes(event)
-    );
-    this.cryptos = crypsSearch;
+    this.cryptos = this.service.filterSearch(event);
   }
-  startChange(event: any) {
-    event.target.classList.toggle('active');
+  startChange(event: any, cryto: Crypto) {
+    this.service.startChange(event);
+    this.service.addToFavorites(cryto);
+  }
+  removeActive() {
+    document
+      .querySelectorAll('.tab-btn')
+      .forEach((item) => item.classList.remove('active'));
   }
 }

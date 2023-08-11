@@ -133,3 +133,9 @@
   background-color: var(--blue-crayola);
   border-color: var(--blue-crayola);
 }
+.green {
+  color: var(--medium-sea-green);
+}
+.red {
+  color: red;
+}

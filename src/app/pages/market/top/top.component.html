@@ -19,17 +19,17 @@
                     <button class="tab-btn active" (click)="filterAll()">View All</button>
                 </li>
                 <li>
-                    <button class="tab-btn  favorite" (click)="filterFav()"><ion-icon name="star"></ion-icon>
+                    <button class="tab-btn  favorite" (click)="filterFav($event)"><ion-icon name="star"></ion-icon>
                         Favorites</button>
                 </li>
                 <li>
-                    <button class="tab-btn " (click)="filterMeta()">Metaverse</button>
+                    <button class="tab-btn " (click)="filterMeta($event)">Metaverse</button>
                 </li>
                 <li>
-                    <button class="tab-btn" (click)="filterEntertainment()">Entertainment</button>
+                    <button class="tab-btn" (click)="filterEntertainment($event)">Entertainment</button>
                 </li>
                 <li>
-                    <button class="tab-btn" (click)="filterEnergy()">Energy</button>
+                    <button class="tab-btn" (click)="filterEnergy($event)">Energy</button>
                 </li>
             </ul>
             <table class="market-table">
@@ -45,10 +45,10 @@
                     </tr>
                 </thead>
                 <tbody class="table-body">
-                    <tr *ngFor="let crypto of cryptos " class="table-row">
+                    <tr *ngFor="let crypto of cryptos" class="table-row">
                         <td class="table-data">
                             <button class="add-to-fav " aria-label="Add to favourite" data-add-to-fav
-                                (click)="startChange($event)">
+                                (click)="startChange($event,crypto)" [ngClass]="crypto.fav?'active':''">
                                 <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
                                 <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
                             </button>
@@ -71,6 +71,9 @@
                                 <img src="assets/images/trade.svg" alt="">
                             </div>
                         </td>
+                    </tr>
+                    <tr *ngIf="cryptos.length==0" class="table-row">
+                        <td class="table-data" colspan="6" style="text-align: center;">Cryptocurrency not found</td>
                     </tr>
                 </tbody>
             </table>

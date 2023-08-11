@@ -3,32 +3,28 @@
         <div class="trend-tab">
             <ul class="tab-nav">
                 <li><button class="tab-btn active">Crypto</button></li>
-                <li><button class="tab-btn">Defi</button></li>
-                <li><button class="tab-btn">BSC</button></li>
-                <li><button class="tab-btn">NFT</button></li>
-                <li><button class="tab-btn">Metaverse</button></li>
-                <li><button class="tab-btn">Polkadot</button></li>
-                <li><button class="tab-btn">Solana</button></li>
-                <li><button class="tab-btn">Opensea</button></li>
-                <li><button class="tab-btn">Makersplace</button></li>
+                <li><button class="tab-btn" (click)="filterDefi()">Defi</button></li>
+                <li><button class="tab-btn" (click)="filterMeta()">Metaverse</button></li>
+                <li><button class="tab-btn" (click)="filterEntertainment()">Entertainment</button></li>
+                <li><button class="tab-btn" (click)="filterEnergy()">Energy</button></li>
             </ul>
             <div class="tab-content">
-                <li>
+                <li *ngFor="let crypto of cryptos.slice(0,4)">
                     <div class="trend-card active">
                         <div class="card-title-wrapper">
-                            <img src="assets/images/coin-1.svg" width="24" height="24" alt="bitcoin logo">
+                            <img [src]="crypto.img" width="24" height="24" alt="bitcoin logo">
                             <a href="#" class="card-title">
-                                Bitcoin <span class="span">BTC/USD</span>
+                                {{crypto.name}} <span class="span">{{crypto.slug}}/USD</span>
                             </a>
                         </div>
-                        <data class="card-value" value="46168.95">USD 46,168.95</data>
+                        <data class="card-value" value="46168.95">USD {{crypto.price}}</data>
                         <div class="card-analytics">
-                            <data class="current-price" value="36641.20">36,641.20</data>
-                            <div class="badge red">-0.79%</div>
+                            <data class="current-price" value="36641.20">{{crypto.market}}</data>
+                            <div class="badge " [ngClass]="crypto.green?'green':'red'">{{crypto.day}}</div>
                         </div>
                     </div>
                 </li>
-                <li>
+                <!-- <li>
                     <div class="trend-card">
                         <div class="card-title-wrapper">
                             <img src="assets/images/coin-2.svg" width="24" height="24" alt="ethereum logo">
@@ -72,8 +68,7 @@
                             <div class="badge red">-1.24%</div>
                         </div>
                     </div>
-                </li>
-
+                </li> -->
             </div>
         </div>
     </div>
