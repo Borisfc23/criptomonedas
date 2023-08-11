@@ -2,11 +2,10 @@
   position: fixed;
   width: 40px;
   height: 40px;
-  border-radius: 25px;
+  border-radius: 20px;
   background-color: var(--blue-crayola);
   display: flex;
   align-items: center;
-  font-size: 23px;
   font-weight: var(--fw-700);
   justify-content: center;
   right: 30px;
@@ -15,7 +14,6 @@
 }
 ion-icon {
   transition: 0.3s all ease-in-out;
-}
-.section-up:hover ion-icon {
-  padding-bottom: 5px;
+  color: var(--white);
+  font-size: 25px;
 }

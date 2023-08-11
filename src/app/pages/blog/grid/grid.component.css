@@ -24,6 +24,9 @@
   flex-direction: column;
   row-gap: 5px;
 }
+.content-posts .post .post-text h4 {
+  color: var(--white);
+}
 .content-posts .line:not(:last-child) {
   border: 1px solid var(--raisin-black);
 }
