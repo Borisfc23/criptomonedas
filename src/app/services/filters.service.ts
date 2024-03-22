@@ -51,8 +51,9 @@ export class FiltersService {
   }
   filterSearch(event: any): Crypto[] {
     this.cryptos = this.tempArray;
-    const crypsSearch = this.cryptos.filter(({ name }) =>
-      name.toLowerCase().includes(event)
+    const crypsSearch = this.cryptos.filter(
+      ({ name, slug }) =>
+        name.toLowerCase().includes(event) || slug.toLowerCase().includes(event)
     );
     this.cryptos = crypsSearch;
     return this.cryptos;

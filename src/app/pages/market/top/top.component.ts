@@ -39,6 +39,11 @@ export class TopComponent {
     this.removeActive();
     this.cryptos = this.service.filterMeta();
   }
+  filterDefi(event: any) {
+    event.target.classList.add('active');
+    this.removeActive();
+    this.cryptos = this.service.filterDefi();
+  }
   filterSearch(event: any) {
     this.cryptos = this.service.filterSearch(event);
   }

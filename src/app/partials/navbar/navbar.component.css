@@ -11,8 +11,7 @@
 .header.active {
   position: fixed;
   top: -66px;
-  background-color: var(--white);
-  /* border-block-start: 1px solid var(--cultured); */
+  background-color: black;
   box-shadow: var(--shadow-1);
   animation: slideIn 0.25s var(--cubic-out) forwards;
 }
@@ -20,7 +19,6 @@
 @keyframes slideIn {
   0% {
     transform: translateY(0);
-    background-color: var(--white);
   }
 
   100% {

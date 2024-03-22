@@ -1,4 +1,3 @@
-import { map } from 'rxjs';
 import { Component } from '@angular/core';
 import { Crypto } from 'src/app/models/Crypto';
 import { FiltersService } from 'src/app/services/filters.service';
@@ -34,6 +33,11 @@ export class MarketComponent {
     event.target.classList.add('active');
     this.removeActive();
     this.cryptos = this.service.filterMeta();
+  }
+  filterDefi(event: any) {
+    event.target.classList.add('active');
+    this.removeActive();
+    this.cryptos = this.service.filterDefi();
   }
   startChange(event: any, crypto: Crypto) {
     this.service.startChange(event);
