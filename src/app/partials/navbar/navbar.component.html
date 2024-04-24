@@ -1,13 +1,12 @@
 <header class="header" data-header>
     <div class="container">
-        <a [routerLink]="['/home']" class="logo">
+        <a [routerLink]="['/']" class="logo">
             <img src="assets/images/logo256x256.png" alt="logo-bitpoint" style="height: 32px !important;">
         </a>
         <nav class="navbar" data-navbar>
             <ul class="navbar-list">
                 <li class="navbar-item">
-                    <a [routerLink]="['/home']" class="navbar-link" routerLinkActive="active" data-nav-link
-                        (click)="closeMenu()">Home</a>
+                    <a [routerLink]="['/']" class="navbar-link" data-nav-link (click)="closeMenu()">Home</a>
                 </li>
                 <li class="navbar-item">
                     <a [routerLink]="['/buy']" class="navbar-link" routerLinkActive="active" data-nav-link

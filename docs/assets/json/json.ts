@@ -381,7 +381,7 @@ export const cryptos = [
     type: 'defi',
   },
   {
-    id: 9,
+    id: 10,
     name: 'Near',
     slug: 'NEAR',
     price: '$36,683.99',
@@ -393,7 +393,7 @@ export const cryptos = [
     type: 'defi',
   },
   {
-    id: 9,
+    id: 11,
     name: 'Aave',
     slug: 'AAVE',
     price: '$56,985.09',
